@@ -12,7 +12,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 
 # Database Setup
-engine = create_engine("sqlite:///Resources/hawaii.sqlite")
+engine = create_engine("sqlite:///Resources/hawaii.sqlite", connect_args={'check_same_thread': False}, echo=True)
 
 # reflect an existing database into a new model
 Base = automap_base()
